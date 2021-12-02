@@ -1,20 +1,18 @@
 package my.project.advent.of.code.y2020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
 import org.junit.Test;
 
-import my.project.advent.of.code.utils.Iterables;
-import my.project.advent.of.code.utils.Predicate;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
 
 public class Day7 {
 

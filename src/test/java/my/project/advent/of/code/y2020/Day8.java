@@ -707,6 +707,7 @@ public class Day8 {
 			}
 			executeInstructions(newInput);
 		}		
+		fail();
     }
 	
 	private List<Instruction> clone(List<Instruction> input) {

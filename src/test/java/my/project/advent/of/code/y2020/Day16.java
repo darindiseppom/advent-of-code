@@ -5,24 +5,17 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import org.junit.Test;
 
-import my.project.advent.of.code.utils.Iterables;
-import my.project.advent.of.code.utils.Predicate;
-import my.project.advent.of.code.utils.Range;
 
-//import com.google.common.base.Predicate;
-//import com.google.common.collect.BoundType;
-//import com.google.common.collect.ContiguousSet;
-//import com.google.common.collect.DiscreteDomain;
-//import com.google.common.collect.Iterables;
-//import com.google.common.collect.Range;
+import com.google.common.base.Predicate;
+import com.google.common.collect.BoundType;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Range;
 
 public class Day16 {
 	// 3539290312643

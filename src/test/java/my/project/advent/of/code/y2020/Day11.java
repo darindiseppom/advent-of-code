@@ -126,6 +126,8 @@ public class Day11 {
 			System.out.println(countSeatsOccupied(input2));
 		}
 		
+		fail();
+		
 		
 	}
 

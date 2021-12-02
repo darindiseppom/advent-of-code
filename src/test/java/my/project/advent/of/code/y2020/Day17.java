@@ -782,6 +782,7 @@ public class Day17 {
 
 	}
 
+	@SuppressWarnings("unused")
 	private void printNeighbors(int x, int y, int z, char[][][] space) {
 		System.out.println(test[x - 1][y - 1][z - 1] + " " + test[x - 1][y - 1][z] + " " + test[x - 1][y - 1][z + 1]
 				+ "   " + test[x][y - 1][z - 1] + " " + test[x][y - 1][z] + " " + test[x][y - 1][z + 1] + "   "
@@ -975,6 +976,7 @@ public class Day17 {
 		return howMany(list, '#');
 	}
 
+	@SuppressWarnings("unused")
 	private int howManyInactive(List<Character> list) {
 		return howMany(list, '.');
 	}
@@ -993,6 +995,7 @@ public class Day17 {
 		return howMany(list, '#');
 	}
 
+	@SuppressWarnings("unused")
 	private int howManyInactive(char[][][] list) {
 		return howMany(list, '#');
 	}

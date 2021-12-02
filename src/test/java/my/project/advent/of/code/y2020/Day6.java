@@ -4,13 +4,11 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.SortedSet;
 
 import org.junit.Test;
 
@@ -1063,6 +1061,7 @@ public class Day6 {
 			}
 		}
 		System.out.println(count);
+		fail();
 
 	}
 	

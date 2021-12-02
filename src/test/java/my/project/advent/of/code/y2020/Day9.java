@@ -2,7 +2,6 @@ package my.project.advent.of.code.y2020;
 
 import static org.junit.Assert.*;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
