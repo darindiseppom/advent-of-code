@@ -1,4 +1,4 @@
-package it.prometeia.pca.events.listeners.impl;
+package my.project.advent.of.code.y2020;
 
 import static org.junit.Assert.*;
 
@@ -504,7 +504,8 @@ public class Day18 {
 	}
 
 	private Parenthesis findParentheses(String expr) {
-		String[] array = Utils.tail(expr.split(""));
+		// TODO
+		String[] array = {""}; // Utils.tail(expr.split(""));
 		int index = 0;
 		boolean found = false;
 		while(index < array.length && !found) {

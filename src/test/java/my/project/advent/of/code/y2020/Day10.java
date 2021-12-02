@@ -1,4 +1,4 @@
-package it.prometeia.pca.events.listeners.impl;
+package my.project.advent.of.code.y2020;
 
 import static org.junit.Assert.*;
 
@@ -10,8 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
-
-import com.aspose.p2cbca448.di;
 
 public class Day10 {
 	
@@ -78,6 +76,7 @@ public class Day10 {
 		return getArrangemenetsDiff2(diffList);
 	}
 
+	@SuppressWarnings("unused")
 	private int getArrangemenetsDiff(List<Integer> diffList) {
 		if (map.get(diffList) != null) {
 			return 0;
@@ -110,6 +109,7 @@ public class Day10 {
 		return result;
 	}
 
+	@SuppressWarnings("unused")
 	private int getArrangemenetsDiff(String diffList) {
 		if (mapS.get(diffList) != null) {
 			return 0;

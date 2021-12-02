@@ -1,4 +1,4 @@
-package it.prometeia.pca.events.listeners.impl;
+package my.project.advent.of.code.y2020;
 
 import static org.junit.Assert.*;
 
@@ -12,10 +12,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import org.junit.Test;
-import org.matheclipse.core.builtin.function.Array;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterables;
+import my.project.advent.of.code.utils.Iterables;
+import my.project.advent.of.code.utils.Predicate;
 
 public class Day7 {
 

@@ -1,4 +1,4 @@
-package it.prometeia.pca.events.listeners.impl;
+package my.project.advent.of.code.y2020;
 
 import static org.junit.Assert.*;
 

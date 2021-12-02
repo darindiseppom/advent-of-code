@@ -1,2 +1,4 @@
 .classPath
 .project
+.settings
+/target/

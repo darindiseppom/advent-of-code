@@ -1,4 +1,4 @@
-package it.prometeia.pca.events.listeners.impl;
+package my.project.advent.of.code.y2020;
 
 import static org.junit.Assert.*;
 
@@ -13,12 +13,16 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.BoundType;
-import com.google.common.collect.ContiguousSet;
-import com.google.common.collect.DiscreteDomain;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Range;
+import my.project.advent.of.code.utils.Iterables;
+import my.project.advent.of.code.utils.Predicate;
+import my.project.advent.of.code.utils.Range;
+
+//import com.google.common.base.Predicate;
+//import com.google.common.collect.BoundType;
+//import com.google.common.collect.ContiguousSet;
+//import com.google.common.collect.DiscreteDomain;
+//import com.google.common.collect.Iterables;
+//import com.google.common.collect.Range;
 
 public class Day16 {
 	// 3539290312643
@@ -373,10 +377,10 @@ public class Day16 {
 	}
 	
 	private boolean foundAllPosition(List<Field> fields) {
+		// TODO
 		Iterable<Field> filter = Iterables.filter(fields, new Predicate<Field>() {
 			@Override
 			public boolean apply(Field arg0) {
-				// TODO Auto-generated method stub
 				return arg0.name.startsWith(START_WITH);
 			}
 		});
@@ -488,6 +492,12 @@ public class Day16 {
 			}
 		}
 		
+
+
+		public Field(String string, Object range, Object range2, int size) {
+			// TODO Auto-generated constructor stub
+		}
+
 
 
 		@Override

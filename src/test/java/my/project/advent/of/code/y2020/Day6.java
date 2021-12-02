@@ -1,4 +1,4 @@
-package it.prometeia.pca.events.listeners.impl;
+package my.project.advent.of.code.y2020;
 
 import static org.junit.Assert.*;
 
@@ -13,6 +13,8 @@ import java.util.Map.Entry;
 import java.util.SortedSet;
 
 import org.junit.Test;
+
+import my.project.advent.of.code.utils.Utils;
 
 public class Day6 {
 

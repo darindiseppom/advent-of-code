@@ -1,4 +1,4 @@
-package it.prometeia.pca.events.listeners.impl;
+package my.project.advent.of.code.y2020;
 
 import static org.junit.Assert.*;
 
@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class Day1 {
+public class Day5 {
 
 	@Test
 	public void test() {
@@ -27,7 +27,37 @@ public class Day1 {
 		int last = seatsID.get(seatsID.size()-1);
 		System.out.println(last);
 		
+		// Part two
+		for (int i = 0; i < seatsID.size(); i++) {
+			int first = seatsID.get(i);
+			int second = seatsID.get(i+1);
+			if (second-first == 2) {
+				System.out.println(first+1);
+			}
+		}
 	}
 
+	private String codeToBinary(String str) {
+		String result = "";
+		String[] split = str.split("");
+		for (int i = 1; i < split.length; i++) {
+			if ("F".equals(split[i]) || "L".equals(split[i])) {
+				result += "0";
+			} else {
+				result += "1";
+			}
+		}
+		return result;
+	}
+	
+	private int binaryToInt(String binary) {
+		int length = binary.length();
+		if (length == 0) {
+			return 0;
+		}
+		String head = binary.substring(0, length-1);
+		String tail = binary.substring(length-1);
+		return tail.equals("0") ? ( 2 * binaryToInt(head)) : (1 + 2 * binaryToInt(head));
+	}
 
 }

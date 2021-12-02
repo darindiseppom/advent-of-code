@@ -1,7 +1,6 @@
-package it.prometeia.pca.events.listeners.impl;
+package my.project.advent.of.code.y2020;
 
 import static org.junit.Assert.*;
-import static org.mockito.Matchers.anyObject;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
