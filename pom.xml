@@ -20,6 +20,14 @@
 		<java.version>11</java.version>
 		<google-guava-version>30.1.1-jre</google-guava-version>
 	</properties>
+	
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Darindiseppom Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/darindiseppom/advent-of-code</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
