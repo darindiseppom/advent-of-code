@@ -1,4 +1,3 @@
-package my.project.advent.of.code.y2020;
 
 import static org.junit.Assert.assertEquals;
 
@@ -614,7 +613,7 @@ public class Day7 {
 				new BagRule("dim tomato bag",new Stock(3,"drab lime bag"),new Stock(4,"vibrant tomato bag")),
 				new BagRule("mirrored maroon bag",new Stock(3,"drab coral bag")));
 		// Part one
-		Map<String, List<String>> bagContainedByMap = new LinkedHashMap<>();
+		Map<String, List<String>> bagContainedByMap = new LinkedHashMap<String, List<String>>();
 		for (BagRule bagRule : input) {
 			for (String innerBag : bagRule.innermostBags) {
 				if (bagContainedByMap.containsKey(innerBag)) {
@@ -651,7 +650,7 @@ public class Day7 {
 	}
 	
 	private List<BagRule> getInnerRules(List<String> list, List<BagRule> input) {
-		List<BagRule> result = new ArrayList<>();
+		List<BagRule> result = new ArrayList<BagRule>();
 		for (String bag : list) {
 			result.add(findBagRule(bag, input));
 		}
@@ -659,7 +658,7 @@ public class Day7 {
 	}
 	
 	private List<String> getAllBags(List<BagRule> rules) {
-		List<String> result = new ArrayList<>();
+		List<String> result = new ArrayList<String>();
 		for (BagRule rule : rules) {
 			result.addAll(rule.innermostBags);
 		}
@@ -668,7 +667,6 @@ public class Day7 {
 	
 	private BagRule findBagRule(final String outerBag, List<BagRule> list) {
 		return Iterables.find(list, new Predicate<BagRule>() {
-			@Override
 			public boolean apply(BagRule arg0) {
 				return outerBag.equals(arg0.outermostBag);
 			}
@@ -676,7 +674,7 @@ public class Day7 {
 	}
 	
 	private List<String> getOuterLevel(Map<String, List<String>> map, List<String> bags) {
-		List<String> outerLevel = new ArrayList<>();
+		List<String> outerLevel = new ArrayList<String>();
 		for (String string : bags) {
 			if (map.containsKey(string)) {
 				outerLevel.addAll(map.get(string));				

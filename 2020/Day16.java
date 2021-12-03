@@ -1,6 +1,7 @@
-package my.project.advent.of.code.y2020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +11,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.junit.Test;
-
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.BoundType;
@@ -340,18 +340,18 @@ public class Day16 {
 		assertTrue(getTicketsToDiscard(test1NearbyTickets, test1Fields).contains(new Ticket(40,4,50)));
 		assertEquals(3, getTicketsToDiscard(test1NearbyTickets, test1Fields).size());
 		assertFalse(getTicketsToDiscard(test1NearbyTickets, test1Fields).contains(new Ticket(7,3,47)));
-		List<Ticket> copy = new ArrayList<>(test1NearbyTickets);
+		List<Ticket> copy = new ArrayList<Ticket>(test1NearbyTickets);
 		copy.removeAll(getTicketsToDiscard(test1NearbyTickets, test1Fields));
 		assertEquals(1, copy.size());
 		
-		List<Ticket> validNearbyTickets = new ArrayList<>(nearbyTickets);
+		List<Ticket> validNearbyTickets = new ArrayList<Ticket>(nearbyTickets);
 		validNearbyTickets.removeAll(getTicketsToDiscard(nearbyTickets, fields));
 		for (Field field : fields) {
 			for (Ticket ticket : validNearbyTickets) {
 				for (int i = 0; i < ticket.size(); i++) {
 					Integer value = ticket.get(i);
 					if (field.availablePositions.contains(i) && !field.contains(value)) {
-						field.availablePositions.remove(new Integer(i));
+						field.availablePositions.remove(Integer.valueOf(i));
 					}
 					
 				}
@@ -372,7 +372,6 @@ public class Day16 {
 	private boolean foundAllPosition(List<Field> fields) {
 		// TODO
 		Iterable<Field> filter = Iterables.filter(fields, new Predicate<Field>() {
-			@Override
 			public boolean apply(Field arg0) {
 				return arg0.name.startsWith(START_WITH);
 			}
@@ -387,14 +386,14 @@ public class Day16 {
 	}
 
 	private void normalize(List<Field> fields) {
-		Map<Integer, List<Integer>> map = new HashMap<>();
+		Map<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
 		for (int i = 0; i < fields.size(); i++) {
 			Field field = fields.get(i);
 			for (Integer pos : field.availablePositions) {
 				if (map.containsKey(pos)) {
 					map.get(pos).add(i);
 				} else {
-					List<Integer> list = new ArrayList<>();
+					List<Integer> list = new ArrayList<Integer>();
 					list.add(i);
 					map.put(pos, list);
 				}
@@ -402,7 +401,7 @@ public class Day16 {
 			}
 			for (Entry<Integer, List<Integer>> entry : map.entrySet()) {
 				if (entry.getValue().size() == 1) {
-					List<Integer> list = new ArrayList<>();
+					List<Integer> list = new ArrayList<Integer>();
 					list.add(entry.getKey());
 					fields.get(entry.getValue().get(0)).availablePositions = list;
 				}
@@ -410,7 +409,7 @@ public class Day16 {
 			if (field.availablePositions.size() == 1) {
 				continue;
 			}
-			List<Field> subList = new ArrayList<>();
+			List<Field> subList = new ArrayList<Field>();
 			if (i == 0) {
 				subList.addAll(fields.subList(1, fields.size()));
 			} else if (i == fields.size()-1) {
@@ -450,7 +449,7 @@ public class Day16 {
 	}
 
 	private List<Ticket> getTicketsToDiscard(List<Ticket> nearbyTickets, List<Field> fields) {
-		List<Ticket> result = new ArrayList<>();
+		List<Ticket> result = new ArrayList<Ticket>();
 		for (Ticket ticket : nearbyTickets) {			
 			for (Integer value : ticket) {
 				int i = 0;
@@ -479,25 +478,22 @@ public class Day16 {
 			this.name = name;
 			this.range1 = range1;
 			this.range2 = range2;
-			availablePositions = new ArrayList<>();
+			availablePositions = new ArrayList<Integer>();
 			for (int i = 1; i <= ticketLength; i++) {
 				availablePositions.add(i);
 			}
 		}
 		
 
-
 		public Field(String string, Object range, Object range2, int size) {
 			// TODO Auto-generated constructor stub
 		}
-
 
 
 		@Override
 		public String toString() {
 			return "[" + name + ", " + availablePositions + "]";
 		}
-
 
 
 		boolean contains(int value) {
@@ -526,7 +522,6 @@ public class Day16 {
 		private Long getMultiply(final String fieldStartWith) {
 			long result = 1;
 			Iterable<Field> filter = Iterables.filter(fields, new Predicate<Field>() {
-				@Override
 				public boolean apply(Field arg0) {
 					return arg0.name.startsWith(fieldStartWith);
 				}

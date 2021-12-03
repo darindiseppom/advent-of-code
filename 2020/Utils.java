@@ -1,4 +1,3 @@
-package my.project.advent.of.code.utils;
 
 import java.util.List;
 

@@ -1,6 +1,3 @@
-package my.project.advent.of.code.y2020;
-
-import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -126,8 +123,6 @@ public class Day11 {
 			System.out.println(countSeatsOccupied(input2));
 		}
 		
-		fail();
-		
 		
 	}
 
@@ -179,7 +174,7 @@ public class Day11 {
 	}
 
 	private List<String> getAdjacent(String[][] input, int i, int j) {
-		List<String> _return = new ArrayList<>();
+		List<String> _return = new ArrayList<String>();
 		if (i > 0) {
 			_return.add(input[i-1][j]);
 			if (j < input[i].length-1) {
@@ -208,7 +203,7 @@ public class Day11 {
 	}
 	
 	private List<String> getAdjacent2(String[][] input, int i, int j) {
-		List<String> _return = new ArrayList<>();
+		List<String> _return = new ArrayList<String>();
 		if (i > 0) {
 			addCloseSeat(input, i, j, -1, 0, -1, -1, _return);
 			if (j < input[i].length-1) {

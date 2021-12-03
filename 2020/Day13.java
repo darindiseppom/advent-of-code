@@ -1,6 +1,6 @@
-package my.project.advent.of.code.y2020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -72,7 +72,7 @@ public class Day13 {
 				}
 				int numEl = Integer.valueOf(el);
 				if ((value + index) % numEl != 0) {
-					value += mcm(new ArrayList<>(input.subList(0, index)));
+					value += mcm(new ArrayList<String>(input.subList(0, index)));
 					break;
 				}
 				index++;

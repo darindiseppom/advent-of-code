@@ -1,6 +1,7 @@
-package my.project.advent.of.code.y2020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -204,7 +205,6 @@ public class Day14 {
 			new MaskInstruction("00000000000000000000000000000000X0XX"), 
 			new MemoryInstruction(26,1));
 
-
 	
 	@Test
 	public void test() {
@@ -313,7 +313,7 @@ public class Day14 {
 		}
 
 		private List<Long> getFloatingAddresses(String address) {
-			List<Long> result = new ArrayList<>();
+			List<Long> result = new ArrayList<Long>();
 			int i = 0;
 			while(i < address.length() && !isX(address.charAt(i))) {
 				i++;

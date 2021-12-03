@@ -1,6 +1,5 @@
-package my.project.advent.of.code.y2020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
@@ -854,41 +853,45 @@ public class Day12 {
 
 		void doInstruction(Instruction instruction) {
 			int value = instruction.value;
-			switch(instruction.operator) {
-				case "N": valueNorth += value; break;
-				case "S": valueNorth -= value; break;
-				case "W": valueEast -= value; break;
-				case "E": valueEast += value; break;
-				case "L": 
-					value /= 90;
-					changeDirection("L", value);
-					break;
-				case "R": 
-					value /= 90;
-					changeDirection("R", value);
-					break;
-				case "F": goForward(value); break;
+			if (instruction.operator == "N") {
+				valueNorth += value;
+			} else if (instruction.operator == "S") {
+				valueNorth -= value;
+			} else if (instruction.operator == "W") {
+				valueEast -= value;
+			} else if (instruction.operator == "E") {
+				valueEast += value;
+			} else if (instruction.operator == "L") {
+				value /= 90;
+				changeDirection("L", value);;
+			} else if (instruction.operator == "R") {
+				value /= 90;
+				changeDirection("R", value);
+			} else if (instruction.operator == "F") {
+				goForward(value);
 			}
 		}
 
 		void doInstructionWithWayPoint(Instruction instruction) {
 			int value = instruction.value;
-			switch(instruction.operator) {
-				case "N": waypoint.north += value; break;
-				case "S": waypoint.north -= value; break;
-				case "W": waypoint.east -= value; break;
-				case "E": waypoint.east += value; break;
-				case "L": 
-					value /= 90;
-					value %= 4;
-					changeWayPointDirection("L", value);
-					break;
-				case "R": 
-					value /= 90;
-					value %= 4;
-					changeWayPointDirection("R", value);
-					break;
-				case "F": goForwardWayPoint(value); break;
+			if (instruction.operator == "N") {
+				waypoint.north += value;
+			} else if (instruction.operator == "S") {
+				waypoint.north -= value;
+			} else if (instruction.operator == "W") {
+				waypoint.east -= value;
+			} else if (instruction.operator == "E") {
+				waypoint.east += value;
+			} else if (instruction.operator == "L") {
+				value /= 90;
+				value %= 4;
+				changeWayPointDirection("L", value);
+			} else if (instruction.operator == "R") {
+				value /= 90;
+				value %= 4;
+				changeWayPointDirection("R", value);
+			} else if (instruction.operator == "F") {
+				goForwardWayPoint(value);
 			}
 		}
 		

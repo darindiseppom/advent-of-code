@@ -1,4 +1,5 @@
 .classPath
 .project
 .settings
+.mvn
 /target/

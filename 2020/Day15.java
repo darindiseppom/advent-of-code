@@ -1,6 +1,5 @@
-package my.project.advent.of.code.y2020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -55,7 +54,7 @@ public class Day15 {
 	}
 
 	private int getNthNumber(int nTh, List<Integer> startingNumbers) {
-		Map<Integer, Spoken> map = new HashMap<>();
+		Map<Integer, Spoken> map = new HashMap<Integer, Spoken>();
 		int turn = 0;
 		while (turn < startingNumbers.size()) {
 			Spoken value = new Spoken();

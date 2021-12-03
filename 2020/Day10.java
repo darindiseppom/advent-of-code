@@ -1,6 +1,5 @@
-package my.project.advent.of.code.y2020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,8 +16,8 @@ public class Day10 {
 	static List<Integer> inputTest2 = Arrays.asList(28,33,18,42,31,14,46,20,48,47,24,23,49,45,19,38,39,11,1,32,25,35,8,17,7,9,4,2,34,10,3);
 	static List<Integer> inputTest3 = Arrays.asList(1, 2, 3, 4);
 	static List<Integer> input = Arrays.asList(152,18,146,22,28,133,114,67,19,37,66,14,90,163,26,149,71,106,46,143,145,12,151,105,58,130,93,49,74,83,129,122,63,134,86,136,166,169,159,3,178,88,103,97,110,53,125,128,9,15,78,1,50,87,56,89,60,139,113,43,36,118,170,96,135,23,144,153,150,142,95,180,35,179,80,13,115,2,171,32,70,6,72,119,29,79,27,47,107,73,162,172,57,40,48,100,64,59,175,104,156,94,77,65);
-	static Map<List<Integer>, Boolean> map = new HashMap<>();
-	static Map<String, Boolean> mapS = new HashMap<>();
+	static Map<List<Integer>, Boolean> map = new HashMap<List<Integer>, Boolean>();
+	static Map<String, Boolean> mapS = new HashMap<String, Boolean>();
 	
 	@Test
 	public void test() {
@@ -45,7 +44,7 @@ public class Day10 {
 	}
 	
 	private int getMultiply(List<Integer> input) {
-		List<Integer> newInput = new ArrayList<>(input);
+		List<Integer> newInput = new ArrayList<Integer>(input);
 		newInput.add(0);
 		int count1Jolt = 0;
 		int count3Jolt = 0;
@@ -65,7 +64,7 @@ public class Day10 {
 	}
 	
 	private int getArrangements(List<Integer> input) {
-		List<Integer> newInput = new ArrayList<>(input);
+		List<Integer> newInput = new ArrayList<Integer>(input);
 		newInput.add(0);
 		Collections.sort(newInput);
 		int max = newInput.get(newInput.size()-1);
@@ -88,7 +87,7 @@ public class Day10 {
 			if (first == 1 && second == 1) {
 				
 				// Vedere se funziona
-				List<Integer> clone = new ArrayList<>(diffList);
+				List<Integer> clone = new ArrayList<Integer>(diffList);
 				
 				clone.remove(i+1);
 				clone.set(i, 2);
@@ -98,7 +97,7 @@ public class Day10 {
 			if ((first == 1 && second == 2) || (first == 2 && second == 1)) {
 				
 				// Vedere se funziona
-				List<Integer> clone = new ArrayList<>(diffList);
+				List<Integer> clone = new ArrayList<Integer>(diffList);
 				
 				clone.remove(i+1);
 				clone.set(i, 3);
@@ -188,7 +187,7 @@ public class Day10 {
 	
 	private List<Integer> getDiffList(List<Integer> list) {
 		Collections.sort(list);
-		List<Integer> _return = new ArrayList<>();
+		List<Integer> _return = new ArrayList<Integer>();
 		for (int i = 1; i < list.size(); i++) {
 			_return.add(list.get(i) - list.get(i-1));
 		}

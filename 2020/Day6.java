@@ -1,6 +1,3 @@
-package my.project.advent.of.code.y2020;
-
-import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,8 +8,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.junit.Test;
-
-import my.project.advent.of.code.utils.Utils;
 
 public class Day6 {
 
@@ -1042,7 +1037,7 @@ public class Day6 {
 		// Part two
 		count = 0;
 		for (Group group : input2) {
-			Map<String, Integer> map = new LinkedHashMap<>();
+			Map<String, Integer> map = new LinkedHashMap<String, Integer>();
 			for (String answer : group.answers) {
 				String[] list = Utils.tail(answer.split(""));
 				for (String el : list) {
@@ -1061,7 +1056,6 @@ public class Day6 {
 			}
 		}
 		System.out.println(count);
-		fail();
 
 	}
 	

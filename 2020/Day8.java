@@ -1,14 +1,9 @@
-package my.project.advent.of.code.y2020;
-
-import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
-
-import my.project.advent.of.code.utils.Utils;
 
 public class Day8 {
 	
@@ -707,11 +702,10 @@ public class Day8 {
 			}
 			executeInstructions(newInput);
 		}		
-		fail();
     }
 	
 	private List<Instruction> clone(List<Instruction> input) {
-		List<Instruction> _return = new ArrayList<>();
+		List<Instruction> _return = new ArrayList<Instruction>();
 		for (Instruction instruction : input) {
 			// Senza alreadyExecuted
 			_return.add(new Instruction(instruction.operator, instruction.argument));
@@ -734,10 +728,12 @@ public class Day8 {
 	
 	private int executeIntruction(Instruction instruction, int index) {
 		int _return = index;
-		switch(instruction.operator) {
-			case "acc": accumulator += instruction.argument; _return++; break;
-			case "jmp": _return += instruction.argument; break;
-			case "nop": _return++; break;
+		if (instruction.operator == "acc") {
+			accumulator += instruction.argument; _return++;
+		} else if (instruction.operator == "jmp") {
+			_return += instruction.argument;
+		} else if (instruction.operator == "nop") {
+			_return++;
 		}
 		instruction.alreadyExecuted = true;
 		return _return;
@@ -751,7 +747,7 @@ public class Day8 {
 	}
 	
 	private List<String> sanitize(String[] input) {
-		List<String> result = new ArrayList<>();
+		List<String> result = new ArrayList<String>();
 		for (String string : input) {
 			int code = (int) string.charAt(0);
 			if (code > 96 && code < 123) {

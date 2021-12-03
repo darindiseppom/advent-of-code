@@ -1,6 +1,6 @@
-package my.project.advent.of.code.y2020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -308,7 +308,7 @@ public class Day9 {
 		List<Long> _return;
 		Long sum;
 		for (int i = 0; i < input.size()-1; i++) {
-			_return = new ArrayList<>();
+			_return = new ArrayList<Long>();
 			_return.add(input.get(i));
 			sum = input.get(i);
 			if (sum > firstInvalid) {

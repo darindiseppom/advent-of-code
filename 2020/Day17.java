@@ -1,6 +1,5 @@
-package my.project.advent.of.code.y2020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -699,8 +698,8 @@ public class Day17 {
 					{ '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' },
 					{ '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' } } };
 	
-	static Map<Integer, char[][][]> test2 = new HashMap<>();
-	static Map<Integer, char[][][]> input2 = new HashMap<>();
+	static Map<Integer, char[][][]> test2 = new HashMap<Integer, char[][][]>();
+	static Map<Integer, char[][][]> input2 = new HashMap<Integer, char[][][]>();
 	
 	static {
 		for (int i = 0; i < N_CYCLES; i++) {			
@@ -859,7 +858,7 @@ public class Day17 {
 	}
 
 	private static Map<Integer,char[][][]> clone(Map<Integer,char[][][]> toClone) {
-		Map<Integer, char[][][]> clone = new HashMap<>();
+		Map<Integer, char[][][]> clone = new HashMap<Integer, char[][][]>();
 		for (Integer key : toClone.keySet()) {
 			clone.put(key, clone(toClone.get(key)));
 		}
@@ -867,7 +866,7 @@ public class Day17 {
 	}
 	
 	private List<Character> getNeighbors4D(int key, int x, int y, int z, Map<Integer, char[][][]> space) {
-		List<Character> result = new ArrayList<>();
+		List<Character> result = new ArrayList<Character>();
 		if (key > 0) {
 			result.addAll(getNeighbors(x, y, z, space.get(key-1)));			
 		}
@@ -875,12 +874,12 @@ public class Day17 {
 			result.addAll(getNeighbors(x, y, z, space.get(key+1)));			
 		}
 		result.addAll(getNeighbors(x, y, z, space.get(key)));
-		result.remove(new Character(space.get(key)[x][y][z]));
+		result.remove(Character.valueOf(space.get(key)[x][y][z]));
 		return result;
 	}
 	
 	private List<Character> getNeighbors(int x, int y, int z, char[][][] space) {
-		List<Character> result = new ArrayList<>();
+		List<Character> result = new ArrayList<Character>();
 		if (x > 0) {
 			if (y > 0) {
 				if (z > 0) {
@@ -968,7 +967,7 @@ public class Day17 {
 
 	private List<Character> getNeighbors3D(int x, int y, int z, char[][][] space) {
 		List<Character> result = getNeighbors(x, y, z, space);
-		result.remove(new Character(space[x][y][z]));
+		result.remove(Character.valueOf(space[x][y][z]));
 		return result;
 	}
 

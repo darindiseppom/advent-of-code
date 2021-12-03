@@ -1,6 +1,6 @@
-package my.project.advent.of.code.y2020;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +19,7 @@ public class Day5 {
 		assertNotEquals(codeToBinary("FF"), "01");
 		assertEquals(binaryToInt("10"), 2);
 		assertEquals(binaryToInt("100"), 4);
-		List<Integer> seatsID = new ArrayList<>();
+		List<Integer> seatsID = new ArrayList<Integer>();
 		for (String code : input) {
 			seatsID.add(binaryToInt(codeToBinary(code)));
 		}
