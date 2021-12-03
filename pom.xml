@@ -12,7 +12,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
-	<version>1.0.3</version>
+	<version>1.0.4-SNAPSHOT</version>
 	<name>Advent of Code</name>
 	<description>Advent of Code</description>
 
