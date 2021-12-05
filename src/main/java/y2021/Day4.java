@@ -1,7 +1,7 @@
+package y2021;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,6 +12,8 @@ import java.util.Scanner;
 import org.junit.Test;
 import org.springframework.util.ObjectUtils;
 
+import commons.Utils;
+
 public class Day4 {
 
 	private static final String SCANNER_DELIMITER_PATTERN = "\n";
@@ -20,17 +22,17 @@ public class Day4 {
 
 	@Test
 	public void assertPartOne() throws IOException {
-	    assertEquals(25023, doPartOne(getInput("2021/inputs/day4-1.txt")));
+	    assertEquals(25023, doPartOne(getInput("2021/day4-1.txt")));
 	}
 
 	@Test
 	public void assertPartTwo() throws IOException {		
-	    assertEquals(2634, doPartTwo(getInput("2021/inputs/day4-2.txt")));
+	    assertEquals(2634, doPartTwo(getInput("2021/day4-2.txt")));
 	}
 
 	private Bingo getInput(String pathToFile) throws FileNotFoundException {
 		Day4.Bingo bingo = new Day4.Bingo();
-		Scanner scanner = new Scanner(new File(pathToFile));
+		Scanner scanner = Utils.getScanner(this.getClass(), pathToFile);
 		scanner.useDelimiter(SCANNER_DELIMITER_PATTERN);
 		String[] split = scanner.next().split(SPLIT_REGEX_NUMBERS);
 		while (scanner.hasNext()) {

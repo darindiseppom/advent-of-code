@@ -1,7 +1,7 @@
+package y2021;
 
 import static org.junit.Assert.*;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,19 +9,21 @@ import java.util.Scanner;
 
 import org.junit.Test;
 
+import commons.Utils;
+
 public class Day1 {
 	
 	@Test
 	public void partOne() throws FileNotFoundException {
-		assertEquals(1713, countIncresements(getInput("2021/inputs/day1.txt")));
+		assertEquals(1713, countIncresements(getInput("2021/day1.txt")));
 	}
 	@Test
 	public void partTwo() throws FileNotFoundException {
-		assertEquals(1734, count3SumsIncresements(getInput("2021/inputs/day1.txt")));
+		assertEquals(1734, count3SumsIncresements(getInput("2021/day1.txt")));
 	}
 	
 	private List<Integer> getInput(String pathToFile) throws FileNotFoundException {
-		Scanner scanner = new Scanner(new File(pathToFile));
+		Scanner scanner = Utils.getScanner(this.getClass(), pathToFile);
 		List<Integer> inputList = new ArrayList<Integer>();
 		while (scanner.hasNext()) {
 			inputList.add(Integer.valueOf(scanner.next()));

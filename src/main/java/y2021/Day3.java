@@ -1,7 +1,7 @@
+package y2021;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,20 +11,22 @@ import java.util.Scanner;
 import org.junit.Test;
 import org.springframework.util.ObjectUtils;
 
+import commons.Utils;
+
 public class Day3 {
 
 	@Test
 	public void assertPartOne() throws IOException {		
-	    assertEquals(1458194, doPartOne(getInput("2021/inputs/day3-1.txt")));
+	    assertEquals(1458194, doPartOne(getInput("2021/day3-1.txt")));
 	}
 	
 	@Test
 	public void assertPartTwo() throws IOException {		
-	    assertEquals(2829354, doPartTwo(getInput("2021/inputs/day3-2.txt")));
+	    assertEquals(2829354, doPartTwo(getInput("2021/day3-2.txt")));
 	}
 
 	private List<String> getInput(String pathToFile) throws FileNotFoundException {
-		Scanner scanner = new Scanner(new File(pathToFile));
+		Scanner scanner = Utils.getScanner(this.getClass(), pathToFile);
 		List<String> inputList = new ArrayList<String>();
 		while (scanner.hasNext()) {
 			inputList.add(scanner.next());

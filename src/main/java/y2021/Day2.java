@@ -1,8 +1,7 @@
-
+package y2021;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +9,17 @@ import java.util.Scanner;
 
 import org.junit.Test;
 
+import commons.Utils;
+
 public class Day2 {
 	
 	@Test
 	public void partTwo() throws FileNotFoundException {
-		assertEquals(1685186100, getMultiplyFinalPositionsComplex(getInput("2021/inputs/day2-2.txt")));
+		assertEquals(1685186100, getMultiplyFinalPositionsComplex(getInput("2021/day2-2.txt")));
 	}
 	
 	private List<Day2.Command> getInput(String pathToFile) throws FileNotFoundException {
-		Scanner scanner = new Scanner(new File(pathToFile));
+		Scanner scanner = Utils.getScanner(this.getClass(), pathToFile);
 		scanner.useDelimiter("\n");
 		List<Day2.Command> inputList = new ArrayList<Day2.Command>();
 		String[] split;
