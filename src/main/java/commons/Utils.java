@@ -2,6 +2,8 @@ package commons;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -37,6 +39,16 @@ public class Utils {
 			}
 		}
 		return true;
+	}
+
+	public static <T> List<T> tail(List<T> list, int offset) {
+		assert list.size() >= offset;
+
+		List<T> arrayList = new ArrayList<>();
+		for (int i = 1; i <= offset; i++) {
+			arrayList.add(list.get(list.size() - i));
+		}
+		return arrayList;
 	}
 
 }
