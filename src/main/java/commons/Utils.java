@@ -22,12 +22,21 @@ public class Utils {
 		return new Scanner(new File(clazz.getClassLoader().getResource(pathToFile).getFile()));
 	}
 	
-	public static <T> void print(Iterable<T> iterable) {
+	public static <T> void print(Iterable<T> iterable, String delimiter) {
 		Iterator<T> iterator = iterable.iterator();
 		while (iterator.hasNext()) {
-			System.out.print(iterator.next().toString() + (iterator.hasNext() ? "," : ""));
+			System.out.print(iterator.next().toString() + (iterator.hasNext() ? delimiter : ""));
 		}
 		System.out.println();
+	}
+
+	public static boolean contains(String source, String els) {
+		for (int i = 0; i < els.length(); i++) {
+			if (!source.contains(els.subSequence(i, i+1))) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
