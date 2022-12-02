@@ -3,9 +3,10 @@ package commons;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class Utils {
@@ -23,13 +24,19 @@ public class Utils {
 	public static Scanner getScanner(Class<?> clazz, String pathToFile) throws FileNotFoundException {
 		return new Scanner(new File(clazz.getClassLoader().getResource(pathToFile).getFile()));
 	}
-	
+
 	public static <T> void print(Iterable<T> iterable, String delimiter) {
 		Iterator<T> iterator = iterable.iterator();
 		while (iterator.hasNext()) {
 			System.out.print(iterator.next().toString() + (iterator.hasNext() ? delimiter : ""));
 		}
 		System.out.println();
+	}
+
+	public static <K, T> void print(Map<K, T> map, String delimiter) {
+		for (Entry<K, T> entry : map.entrySet()) {
+			System.out.println(entry.getKey().toString() + delimiter + entry.getValue().toString());
+		}
 	}
 
 	public static boolean contains(String source, String els) {

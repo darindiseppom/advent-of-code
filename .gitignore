@@ -3,3 +3,4 @@
 .settings
 .mvn
 /target/
+.metadata
