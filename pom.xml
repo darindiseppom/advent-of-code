@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>advent-of-code</groupId>
 	<artifactId>advent-of-code</artifactId>
@@ -18,7 +16,7 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<google-guava-version>30.1.1-jre</google-guava-version>
+		<guava.version>30.1.1-jre</guava.version>
 	</properties>
 
 	<distributionManagement>
@@ -28,6 +26,21 @@
 			<url>https://maven.pkg.github.com/darindiseppom/advent-of-code</url>
 		</repository>
 	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:ssh://git@github.com/darindiseppom/advent-of-code.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/darindiseppom/advent-of-code.git</developerConnection>
+		<url>https://github.com/darindiseppom/advent-of-code.git</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<url>https://github.com/darindiseppom/advent-of-code.git</url>
+
+	<developers>
+		<developer>
+			<name>Matteo Da Rin D'Iseppo</name>
+		</developer>
+	</developers>
 
 	<dependencies>
 		<dependency>
@@ -40,14 +53,18 @@
 		<!-- <scope>test</scope> -->
 		<!-- </dependency> -->
 		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>${google-guava-version}</version>
+			<version>${guava.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-<!-- 			<version>3.12.0</version> -->
+			<!-- 			<version>3.12.0</version> -->
 		</dependency>
 
 	</dependencies>
