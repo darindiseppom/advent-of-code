@@ -25,7 +25,7 @@ public class Day5 {
 	public void partOne() throws FileNotFoundException {
 		List<LinkedList<String>> queues = getQueues(PATH_TO_FILE);
 		List<Triple<Integer, Integer, Integer>> moves = getMoves(PATH_TO_FILE);
-		executeCreateMover9000(queues, moves);
+		executeCrateMover9000(queues, moves);
 		assertEquals("QMBMJDFTD", getFirsts(queues));
 	}
 	
@@ -43,7 +43,7 @@ public class Day5 {
 		return sb.toString();
 	}
 
-	private void executeCreateMover9000(List<LinkedList<String>> queues, List<Triple<Integer, Integer, Integer>> moves) {
+	private void executeCrateMover9000(List<LinkedList<String>> queues, List<Triple<Integer, Integer, Integer>> moves) {
 		for (Triple<Integer, Integer, Integer> move : moves) {
 			LinkedList<String> queueFrom = queues.get(move.getMiddle() - 1);
 			LinkedList<String> queueTo = queues.get(move.getRight() - 1);
