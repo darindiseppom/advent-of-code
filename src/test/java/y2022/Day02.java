@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 
 import commons.Utils;
 
-public class Day2 {
+public class Day02 {
 	
 	private static final String SCANNER_DELIMITER_PATTERN = "\n";
 
@@ -44,12 +44,12 @@ public class Day2 {
 	
 	@Test
 	public void partOne() throws FileNotFoundException {
-		assertEquals(12794, count(getInput("2022/day2.txt")));
+		assertEquals(12794, count(getInput("2022/day02.txt")));
 	}
 	
 	@Test
 	public void partTwo() throws FileNotFoundException {
-		assertEquals(14979, count(getInput2("2022/day2.txt")));
+		assertEquals(14979, count(getInput2("2022/day02.txt")));
 	}
 	
 	private List<Pair<Shape, Shape>> getInput(String pathToFile) throws FileNotFoundException {

@@ -14,18 +14,18 @@ import org.junit.jupiter.api.Test;
 
 import commons.Utils;
 
-public class Day3 {
+public class Day03 {
 
 	private static final String SCANNER_DELIMITER_PATTERN = "\n";
 
 	@Test
 	public void partOne() throws FileNotFoundException {
-		assertEquals(7878, count(getInput("2022/day3.txt")));
+		assertEquals(7878, count(getInput("2022/day03.txt")));
 	}
 	
 	@Test
 	public void partTwo() throws FileNotFoundException {
-		assertEquals(2760, count(getInput2("2022/day3.txt")));
+		assertEquals(2760, count(getInput2("2022/day03.txt")));
 	}
 
 	private Object count(List<String> list) {

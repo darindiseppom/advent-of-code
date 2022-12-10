@@ -13,9 +13,9 @@ import org.junit.jupiter.api.Test;
 import commons.Node;
 import commons.Utils;
 
-public class Day7 {
+public class Day07 {
 
-	private static final String PATH_TO_FILE = "2022/day7.txt";
+	private static final String PATH_TO_FILE = "2022/day07.txt";
 	private static final String SCANNER_DELIMITER_PATTERN = "\n";
 	private static final int DIR_SIZE = 100000;
 	private static final int DISK_SPACE = 70000000;

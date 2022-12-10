@@ -12,18 +12,18 @@ import org.junit.jupiter.api.Test;
 
 import commons.Utils;
 
-public class Day1 {
+public class Day01 {
 	
 	private static final String SCANNER_DELIMITER_PATTERN = "\n";
 	
 	@Test
 	public void partOne() throws FileNotFoundException {
-		assertEquals(68442, mostCalories(getInput("2022/day1.txt")));
+		assertEquals(68442, mostCalories(getInput("2022/day01.txt")));
 	}
 
 	@Test
 	public void partTwo() throws FileNotFoundException {
-		assertEquals(204837, sumTop(getInput("2022/day1.txt"), 3));
+		assertEquals(204837, sumTop(getInput("2022/day01.txt"), 3));
 	}
 
 	private List<Integer> getInput(String pathToFile) throws FileNotFoundException {

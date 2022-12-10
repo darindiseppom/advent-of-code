@@ -16,9 +16,9 @@ import org.junit.jupiter.api.Test;
 
 import commons.Utils;
 
-public class Day5 {
+public class Day05 {
 
-	private static final String PATH_TO_FILE = "2022/day5.txt";
+	private static final String PATH_TO_FILE = "2022/day05.txt";
 	private static final String SCANNER_DELIMITER_PATTERN = "\n";
 
 	@Test

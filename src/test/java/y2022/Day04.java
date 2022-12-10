@@ -11,18 +11,18 @@ import com.google.common.collect.Range;
 
 import commons.Utils;
 
-public class Day4 {
+public class Day04 {
 
 	private static final String SCANNER_DELIMITER_PATTERN = "\n";
 
 	@Test
 	public void partOne() throws FileNotFoundException {
-		assertEquals(494, count("2022/day4.txt"));
+		assertEquals(494, count("2022/day04.txt"));
 	}
 
 	@Test
 	public void partTwo() throws FileNotFoundException {
-		assertEquals(833, count2("2022/day4.txt"));
+		assertEquals(833, count2("2022/day04.txt"));
 	}
 
 	private int count(String pathToFile) throws FileNotFoundException {
