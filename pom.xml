@@ -10,7 +10,7 @@
 		<relativePath />
 	</parent>
 
-	<version>1.0.5-SNAPSHOT</version>
+	<version>1.0.5</version>
 	<name>Advent of Code</name>
 	<description>Advent of Code</description>
 
@@ -35,7 +35,7 @@
 		<connection>scm:git:ssh://git@github.com/darindiseppom/advent-of-code.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/darindiseppom/advent-of-code.git</developerConnection>
 		<url>https://github.com/darindiseppom/advent-of-code.git</url>
-		<tag>HEAD</tag>
+		<tag>v1.0.5</tag>
 	</scm>
 
 	<url>https://github.com/darindiseppom/advent-of-code.git</url>
