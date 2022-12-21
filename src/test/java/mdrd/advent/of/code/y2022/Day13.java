@@ -86,6 +86,7 @@ public class Day13 {
 		return result;
 	}
 
+	@SuppressWarnings("unchecked")
 	private Boolean isOrdered(List<Object> left, List<Object> right) {
 		for (int i = 0; i < left.size(); i++) {
 			if (right.size() <= i) {
@@ -103,13 +104,13 @@ public class Day13 {
 					newR.add(r);
 					r = newR;
 				}
-				Boolean res = isOrdered((List) l, (List) r);
+				Boolean res = isOrdered((List<Object>) l, (List<Object>) r);
 				if (res != null) {
 					return res;
 				}
 			}
 			if (l instanceof List) {
-				Boolean res = isOrdered((List) l, (List) r);
+				Boolean res = isOrdered((List<Object>) l, (List<Object>) r);
 				if (res != null) {
 					return res;
 				}

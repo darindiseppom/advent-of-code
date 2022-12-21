@@ -3,8 +3,6 @@ package mdrd.advent.of.code.y2022;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -109,12 +107,10 @@ public class Day14 {
 	}
 
 	private void initInput(String pathToFile, boolean secondPart) throws FileNotFoundException {
-		List<Pair<List<Object>, List<Object>>> result = new ArrayList<Pair<List<Object>, List<Object>>>();
 		Scanner scanner = Utils.getScanner(getClass(), pathToFile);
 		scanner.useDelimiter(SCANNER_DELIMITER_PATTERN);
 		while (scanner.hasNext()) {
-			String line1 = scanner.next();
-			Matcher matcher = Pattern.compile("(\\d+),(\\d+)").matcher(line1);
+			Matcher matcher = Pattern.compile("(\\d+),(\\d+)").matcher(scanner.next());
 			while (matcher.find()) {
 				Integer x = Integer.valueOf(matcher.group(1));
 				Integer y = Integer.valueOf(matcher.group(2));
@@ -125,11 +121,10 @@ public class Day14 {
 		}
 		scanner = Utils.getScanner(getClass(), pathToFile);
 		scanner.useDelimiter(SCANNER_DELIMITER_PATTERN);
-		matrix = new char[maxX - minX + 2 * maxY][maxY + 5]; // Da valutare
+		matrix = new char[maxX - minX + 2 * maxY][maxY + 5];
 		init();
 		while (scanner.hasNext()) {
-			String line1 = scanner.next();
-			Matcher matcher = Pattern.compile("(\\d+),(\\d+)").matcher(line1);
+			Matcher matcher = Pattern.compile("(\\d+),(\\d+)").matcher(scanner.next());
 			Integer x1;
 			Integer x2 = null;
 			Integer y1;
@@ -148,18 +143,6 @@ public class Day14 {
 		if (secondPart) {
 			draw(0, maxY + 2, matrix.length - 1, maxY + 2);
 		}
-//		print();
-	}
-
-	private void print() {
-		StringBuilder sb = new StringBuilder();
-		for (int y = 0; y < matrix[0].length; y++) {
-			for (int x = 0; x < matrix.length; x++) {
-				sb.append(matrix[x][y]);
-			}
-			sb.append("\n");
-		}
-		System.out.println(sb.toString());
 	}
 
 	private void init() {
