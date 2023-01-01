@@ -3,8 +3,6 @@ package mdrd.advent.of.code.y2022;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -109,7 +107,6 @@ public class Day14 {
 	}
 
 	private void initInput(String pathToFile, boolean secondPart) throws FileNotFoundException {
-		List<Pair<List<Object>, List<Object>>> result = new ArrayList<Pair<List<Object>, List<Object>>>();
 		Scanner scanner = Utils.getScanner(getClass(), pathToFile);
 		scanner.useDelimiter(SCANNER_DELIMITER_PATTERN);
 		while (scanner.hasNext()) {
@@ -148,18 +145,6 @@ public class Day14 {
 		if (secondPart) {
 			draw(0, maxY + 2, matrix.length - 1, maxY + 2);
 		}
-//		print();
-	}
-
-	private void print() {
-		StringBuilder sb = new StringBuilder();
-		for (int y = 0; y < matrix[0].length; y++) {
-			for (int x = 0; x < matrix.length; x++) {
-				sb.append(matrix[x][y]);
-			}
-			sb.append("\n");
-		}
-		System.out.println(sb.toString());
 	}
 
 	private void init() {
