@@ -7,4 +7,6 @@
 
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=plastic&logo=githubactions&logoColor=white)
 [![Maven Package](https://github.com/darindiseppom/advent-of-code/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/darindiseppom/advent-of-code/actions/workflows/maven-publish.yml)
-
+***
+### Advent of Code:
+- [2022](https://adventofcode.com/2022)
