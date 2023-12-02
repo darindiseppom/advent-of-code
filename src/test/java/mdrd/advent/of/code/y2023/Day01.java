@@ -3,14 +3,8 @@ package mdrd.advent.of.code.y2023;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 
-import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 import mdrd.advent.of.code.commons.Utils;
