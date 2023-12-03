@@ -20,15 +20,15 @@ public class Day02 {
 
 	@Test
 	public void partOne() throws FileNotFoundException {
-		assertEquals(2377, getInput(PATH_TO_FILE, false));
+		assertEquals(2377, getInput(PATH_TO_FILE));
 	}
 
 	@Test
 	public void partTwo() throws FileNotFoundException {
-		assertEquals(71220, getInput2(PATH_TO_FILE, true));
+		assertEquals(71220, getInput2(PATH_TO_FILE));
 	}
 
-	private Integer getInput(String pathToFile, boolean isPartTwo) throws FileNotFoundException {
+	private Integer getInput(String pathToFile) throws FileNotFoundException {
 		Scanner scanner = Utils.getScanner(this.getClass(), pathToFile);
 		scanner.useDelimiter(SCANNER_DELIMITER_PATTERN);
 		Set<Integer> impossibleGameIds = new HashSet<>();
@@ -54,7 +54,7 @@ public class Day02 {
 		return allGameIds.stream().reduce(0, Integer::sum);
 	}
 
-	private Integer getInput2(String pathToFile, boolean isPartTwo) throws FileNotFoundException {
+	private Integer getInput2(String pathToFile) throws FileNotFoundException {
 		Scanner scanner = Utils.getScanner(this.getClass(), pathToFile);
 		scanner.useDelimiter(SCANNER_DELIMITER_PATTERN);
 		int counter = 0;
