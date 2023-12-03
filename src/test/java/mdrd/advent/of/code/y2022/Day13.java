@@ -86,6 +86,7 @@ public class Day13 {
 		return result;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private Boolean isOrdered(List<Object> left, List<Object> right) {
 		for (int i = 0; i < left.size(); i++) {
 			if (right.size() <= i) {
