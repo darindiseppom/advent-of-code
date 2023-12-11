@@ -26,10 +26,31 @@ public class Day10 {
 		assertEquals(6951, COUNTER / 2);
 	}
 
-//	@Test
-//	public void partTwo() throws FileNotFoundException {
-//		assertEquals(26187338, getNumberWays(getInput2(PATH_TO_FILE)));
-//	}
+	@Test
+	public void partTwo() throws FileNotFoundException {
+		getInput(PATH_TO_FILE);
+		getStepsFarthest();
+		assertEquals(563, getNumberWays());
+	}
+
+	private int getNumberWays() {
+		int counter = 0;
+		String s;
+		boolean mode = false;
+		for (int x = 0; x < MATRIX.length; x++) {
+			for (int y = 0; y < MATRIX.length; y++) {
+				s = MATRIX[x][y];
+				if ("!".equals(s)) {
+					mode = !mode;
+					continue;
+				} 
+				if (mode && !"?".equals(s)) {
+					counter++;
+				}
+			}
+		}
+		return counter;
+	}
 
 	private void getStepsFarthest() {
 		Direction dir = null;
@@ -136,6 +157,7 @@ public class Day10 {
 	}
 
 	private Direction go(MutablePair<Integer, Integer> pos, Direction direction) {
+		MATRIX[pos.getLeft()][pos.getRight()] = convert(MATRIX[pos.getLeft()][pos.getRight()]);
 		switch (direction) {
 			case UP: pos.setLeft(pos.getLeft() - 1); return Direction.DOWN;
 			case RIGHT: pos.setRight(pos.getRight() + 1); return Direction.LEFT;
@@ -144,6 +166,19 @@ public class Day10 {
 		}
 		return null;
 	}
+	private String convert(String string) {
+		switch (string) {
+			case "S":
+			case "7":
+			case "F":
+			case "|": return "!";
+			case "J":
+			case "L":
+			case "-": return "?";
+		}
+		return string;
+	}
+
 	private MutablePair<Integer, Integer> getStartingPosition(String starting) {
 		for (int x = 0; x < MATRIX.length; x++) {
 			for (int y = 0; y < MATRIX.length; y++) {
